@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="stylesheet.css" rel="stylesheet">
+    </head>
+        <h1 class="mouseinfo">Mouse Position (x, y): <b><span id="mouse-pos"></span></b></h1>
+        <h1 class="angleinfo"></span></b>Angle: <b><b></b><span id="angle"></span></b></h1>
+        <div id="btndiv">
+            <button onclick="multiply()"type="button" id="btn">Decimal Place [x10]</button>
+            <button onclick="divide()"type="button" id="btn2">Decimal Place [/10]</button>
+        </div>
+        <div id="div">
+            <img src="compass.png" class="compass-img"></img>
+        </div>
+
+
+
+    </body>
+
+    <script type="text/javascript">
+            const mousePosText = document.getElementById('mouse-pos');
+            let mousePos = { x: undefined, y: undefined };
+            const angleText = document.getElementById('angle');
+            let z = 10;
+            window.addEventListener('mousemove', (event) => {
+            mousePos = { x: event.clientX, y: event.clientY };
+            mousePosText.textContent = `(${mousePos.x}, ${mousePos.y})`;
+            let orgin = { x: 1280, y: 776};
+            const compass = document.querySelector('.compass-img');
+            let dx = mousePos.x - orgin.x ;
+            let dy = -1*(mousePos.y - orgin.y);
+            let radian = Math.atan2(dx, dy);
+            let angle = Math.round((radian*(180/Math.PI)) * z) / z;
+            angleText.textContent = angle;
+            compass.style.transform = `rotate(${angle}deg)`;
+            });
+            
+            function multiply(){
+                z = z*10
+            }
+            function divide(){
+                z = z/10
+            }
+
+        </script>
+</html>

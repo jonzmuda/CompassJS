@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Hind:wght@300&display=swap');
+
+body{
+    background-color: #f6f6f6;
+    font-family: 'Fjalla One', sans-serif;
+}
+#div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    scale: 0.75;
+}
+
+.mouseinfo{
+    text-align: center;
+    font-size: 50px;
+}
+.angleinfo{
+    text-align: center;
+    font-size: 50px;
+}
+
+#btndiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+
+}
